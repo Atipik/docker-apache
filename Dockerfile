@@ -1,4 +1,4 @@
-FROM marmotz/php
+FROM marmotz/php:php56
 
 USER root
 

@@ -21,6 +21,9 @@ RUN apt-get update -y && \
 
 RUN a2enmod php5
 
+# Clean
+RUN rm -rf /var/lib/apt/lists/*
+
 USER nonrootuser
 
 VOLUME [ "/var/www", "/var/log/apache2" ]

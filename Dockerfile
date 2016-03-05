@@ -16,10 +16,12 @@ RUN a2enmod rewrite
 ADD init_apache.sh /
 
 # PHP
-RUN apt-get update -y && \
-    apt-get install -y --force-yes libapache2-mod-php
+RUN apt-get install -y --force-yes libapache2-mod-php
 
-RUN a2enmod php
+RUN a2enmod php7.0
+
+# Clean
+RUN rm -rf /var/lib/apt/lists/*
 
 USER nonrootuser
 

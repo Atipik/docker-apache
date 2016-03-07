@@ -17,7 +17,8 @@ ADD init_apache.sh /
 
 # PHP
 RUN apt-get update -y && \
-    apt-get install -y --force-yes libapache2-mod-php5
+    apt-get install -y --force-yes libapache2-mod-php5 && \
+    cp /etc/php5/cli/php.ini /etc/php5/apache2/php.ini
 
 RUN a2enmod php5
 

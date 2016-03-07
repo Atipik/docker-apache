@@ -16,7 +16,8 @@ RUN a2enmod rewrite
 ADD init_apache.sh /
 
 # PHP
-RUN apt-get install -y --force-yes libapache2-mod-php
+RUN apt-get install -y --force-yes libapache2-mod-php && \
+    cp /etc/php/7.0/cli/php.ini /etc/php/7.0/apache2/php.ini
 
 RUN a2enmod php7.0
 

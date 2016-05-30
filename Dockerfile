@@ -17,7 +17,7 @@ ADD init_apache.sh /
 
 # PHP
 RUN apt-get install -y --force-yes libapache2-mod-php && \
-    cp /etc/php/7.0/cli/php.ini /etc/php/7.0/apache2/php.ini
+    cp /etc/php/7.0/cli/php.ini /etc/php/7.0/apache2/php.ini && \
     cp /etc/php/7.0/cli/conf.d/* /etc/php/7.0/apache2/conf.d/
 
 RUN a2enmod php7.0

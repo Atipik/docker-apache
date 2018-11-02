@@ -1,4 +1,4 @@
-FROM marmotz/php
+FROM marmotz/php:php72
 
 USER root
 
@@ -17,9 +17,9 @@ ADD init_apache.sh /
 
 # PHP
 RUN apt-get install -y --force-yes libapache2-mod-php && \
-    cp /etc/php/7.0/cli/php.ini /etc/php/7.0/apache2/php.ini
+    cp /etc/php/7.2/cli/php.ini /etc/php/7.2/apache2/php.ini
 
-RUN a2enmod php7.0
+RUN a2enmod php7.2
 
 # Clean
 RUN rm -rf /var/lib/apt/lists/*

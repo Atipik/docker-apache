@@ -1,4 +1,4 @@
-FROM marmotz/php
+FROM meteorit/php
 
 USER root
 
